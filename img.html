@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slider</title>
+  <style>
+    /* General reset and layout */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .slider-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      width: 100%;
+      height: auto;
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 15px;
+      cursor: pointer;
+      font-size: 24px;
+      z-index: 10;
+    }
+
+    button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .slider-container {
+        width: 100%;
+      }
+      button {
+        font-size: 20px;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slider-container">
+    <div class="slider">
+      <img src="https://via.placeholder.com/800x400/FF6347/FFFFFF?text=Image+1" alt="Image 1" class="slide">
+      <img src="https://via.placeholder.com/800x400/4682B4/FFFFFF?text=Image+2" alt="Image 2" class="slide">
+      <img src="https://via.placeholder.com/800x400/32CD32/FFFFFF?text=Image+3" alt="Image 3" class="slide">
+      <img src="https://via.placeholder.com/800x400/FFD700/FFFFFF?text=Image+4" alt="Image 4" class="slide">
+    </div>
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+  </div>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    function moveSlide(direction) {
+      slideIndex += direction;
+      if (slideIndex < 0) {
+        slideIndex = totalSlides - 1;  // Loop back to the last slide
+      }
+      if (slideIndex >= totalSlides) {
+        slideIndex = 0;  // Loop back to the first slide
+      }
+
+      // Move the slider by modifying the translateX property
+      document.querySelector('.slider').style.transform = `translateX(-${slideIndex * 100}%)`;
+    }
+
+    // Optionally, you can make the slider automatically move every 3 seconds
+    setInterval(() => moveSlide(1), 3000);  // Move forward every 3 seconds
+  </script>
+
+</body>
+</html>
