@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Product Page</title>
+  <style>
+    /* General reset and layout */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .product-page {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 1200px;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .product-image {
+      flex: 1;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .product-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-details {
+      flex: 1;
+      padding: 20px;
+      max-width: 600px;
+    }
+
+    .product-name {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .product-description {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .product-price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #28a745;
+      margin-bottom: 20px;
+    }
+
+    .add-to-cart-btn {
+      padding: 15px 25px;
+      background-color: #007bff;
+      color: #fff;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .add-to-cart-btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .product-page {
+        flex-direction: column;
+      }
+
+      .product-image {
+        padding: 15px;
+      }
+
+      .product-details {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="product-page">
+      <!-- Product Image -->
+      <div class="product-image">
+        <img src="https://via.placeholder.com/600x600/007bff/ffffff?text=Product+Image" alt="Product Image">
+      </div>
+
+      <!-- Product Details -->
+      <div class="product-details">
+        <h1 class="product-name">Awesome Product</h1>
+        <p class="product-description">
+          This is an amazing product that you will love. It is designed with high-quality materials and offers great functionality. Perfect for everyday use and an ideal gift for your loved ones.
+        </p>
+        <p class="product-price">$99.99</p>
+        <button class="add-to-cart-btn">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  <img src="path/to/product-image.jpg" alt="Wireless Headphones">
+<h1 class="product-name">Wireless Headphones</h1>
+<p class="product-description">
+  Enjoy superior sound quality with these wireless headphones. Perfect for music lovers and gamers alike, these headphones are comfortable and easy to use with Bluetooth connectivity.
+</p>
+<p class="product-price">$149.99</p>
+<button class="add-to-cart-btn">Add to Cart</button>
+
+
+</body>
+</html>
